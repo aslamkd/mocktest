@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="mock.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="mock-sticky-header">
+      <h2>পদার্থের গঠন</h2>
+<div class="mock-result-container">CORRECT: <span id="mock-got-result">0</span>/10</div>
+</div>
+  <div class="mock-quiz-box custom-box">
+    <div class="mock-ques-box">
+      <div class="mock-ques-text"><span class="mock-ques-num">1</span>
+        কোন আয়নীয় যৌগটিতে ক্যাটায়ন ও অ্যানায়ন কোনটিরই বাইরের কক্ষে আটটি
+        ইলেট্রল নেই?
+      </div>
+    </div>
+    <div class="mock-opt-box">
+      <div class="mock-opt mock-wrong-ans">NaCl</div>
+      <div class="mock-opt mock-wrong-ans">NaH</div>
+      <div class="mock-opt mock-wrong-ans">LiH</div>
+      <div class="mock-opt mock-correct-ans">LiCl</div>
+    </div>
+    <div class="mock-ans-desc"></div>
+  </div>
+  <!-- next question -->
+  <div class="mock-quiz-box custom-box">
+    <div class="mock-ques-box">
+      <div class="mock-ques-text"><span class="mock-ques-num">2</span>
+        কোন আয়নীয় যৌগটিতে ক্যাটায়ন ও অ্যানায়ন কোনটিরই বাইরের কক্ষে আটটি
+        ইলেট্রল নেই?
+      </div>
+    </div>
+    <div class="mock-opt-box">
+      <div class="mock-opt mock-wrong-ans">NaCl</div>
+      <div class="mock-opt mock-wrong-ans">NaH</div>
+      <div class="mock-opt mock-wrong-ans">LiH</div>
+      <div class="mock-opt mock-correct-ans">LiCl</div>
+    </div>
+    <div class="mock-ans-desc"></div>
+  </div>
+  <!-- next question -->
+  <div class="mock-quiz-box custom-box">
+    <div class="mock-ques-box">
+      <div class="mock-ques-text"><span class="mock-ques-num">3</span>
+        কোন আয়নীয় যৌগটিতে ক্যাটায়ন ও অ্যানায়ন কোনটিরই বাইরের কক্ষে আটটি
+        ইলেট্রল নেই?
+      </div>
+    </div>
+    <div class="mock-opt-box">
+      <div class="mock-opt mock-wrong-ans">NaCl</div>
+      <div class="mock-opt mock-wrong-ans">NaH</div>
+      <div class="mock-opt mock-wrong-ans">LiH</div>
+      <div class="mock-opt mock-correct-ans">LiCl</div>
+    </div>
+    <div class="mock-ans-desc"></div>
+  </div>
+  <!-- next question -->
+  <div class="mock-quiz-box custom-box">
+    <div class="mock-ques-box">
+      <div class="mock-ques-text"><span class="mock-ques-num">4</span>
+        কোন আয়নীয় যৌগটিতে ক্যাটায়ন ও অ্যানায়ন কোনটিরই বাইরের কক্ষে আটটি
+        ইলেট্রল নেই?
+      </div>
+    </div>
+    <div class="mock-opt-box">
+      <div class="mock-opt mock-wrong-ans">NaCl</div>
+      <div class="mock-opt mock-wrong-ans">NaH</div>
+      <div class="mock-opt mock-wrong-ans">LiH</div>
+      <div class="mock-opt mock-correct-ans">LiCl</div>
+    </div>
+    <div class="mock-ans-desc"></div>
+  </div>
+  <script>
+    $('.mock-opt').click(function () {
+      
+if(this.className == "mock-opt mock-correct-ans"){
+$('#mock-got-result').text(parseInt($('#mock-got-result').text()) +1);  
+}       
+    //  alert($(".mock-quiz-box").length);  
+    //  alert( $('div.mock-quiz-box').index(this.parentElement.parentElement)+1);
+      
+      $(this).addClass('mock-clicked');
+      $(this.parentElement.parentElement).addClass('answered');
+      
+   if ($(".mock-quiz-box").length != $('div.mock-quiz-box').index(this.parentElement.parentElement)+1 ) {   
+      
+      $('html,body')
+        .delay(1000)
+        .animate(
+          {
+            scrollTop:
+              $(this.parentElement.parentElement).next().offset().top - 150,
+          },
+          'slow'
+        );
+      
+   }
+      
+    });
+  </script>
+  </body>
+</html>
